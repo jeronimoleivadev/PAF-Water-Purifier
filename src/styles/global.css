@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores de la marca PAF-Water-Purifier */
+  --color-brand-light: #e0f2fe; /* Azul muy claro, casi blanco */
+  --color-brand-blue: #0284c7;  /* Azul agua principal */
+  --color-brand-dark: #0f172a;  /* Azul muy oscuro para textos */
+  --color-brand-accent: #38bdf8; /* Celeste brillante para botones o detalles */
+  
+  /* Tipografía */
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Estilos base para todo el sitio */
+@layer base {
+  html {
+    scroll-behavior: smooth; /* Hace que al hacer clic en un ancla, baje suavemente */
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    background-color: #f8fafc; /* Un fondo gris muy suave para que resalte el blanco */
+    color: var(--color-brand-dark);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Hace que las letras se vean más nítidas */
+  }
+}

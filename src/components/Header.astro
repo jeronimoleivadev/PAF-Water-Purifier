@@ -1,0 +1,59 @@
+---
+// No necesitamos props por ahora, los enlaces son fijos.
+---
+
+<header class="bg-white sticky top-0 z-40 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo / Nombre de la marca -->
+      <div class="shrink-0 flex items-center">
+        <a href="/" class="text-xl font-bold text-brand-blue hover:text-brand-dark transition-colors">
+          PAF-Water-Purifier
+        </a>
+      </div>
+
+      <!-- Enlaces de navegación (Escritorio) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Inicio</a>
+        <a href="/#modelos" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Modelos</a>
+        <a href="/contacto" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Botón de menú móvil (Hamburguesa) -->
+      <div class="flex md:hidden">
+        <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-brand-blue focus:outline-none p-2" aria-label="Abrir menú">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú desplegable móvil (Oculto por defecto) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-brand-light">Inicio</a>
+      <a href="/#modelos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-brand-light">Modelos</a>
+      <a href="/contacto" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-brand-light">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Lógica simple para abrir y cerrar el menú en celulares
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('menu-icon');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    // Cambia el icono entre "hamburguesa" y "equis" (X)
+    if (menu?.classList.contains('hidden')) {
+      icon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    } else {
+      icon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    }
+  });
+</script>

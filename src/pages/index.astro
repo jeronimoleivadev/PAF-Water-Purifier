@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Número de WhatsApp (cámbialo por el tuyo real, con código de país sin el +)
+const whatsappNumber = "5493834925273"; 
+const whatsappMessage = encodeURIComponent("Hola PAF-Water-Purifier, quiero cotizar el alquiler de un dispenser de agua.");
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+---
+
+<BaseLayout>
+  <!-- SECCIÓN 1: HERO (Bienvenida principal) -->
+  <section class="bg-brand-light py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight mb-6">
+        Agua pura, fría y caliente <br class="hidden md:block" /> 
+        <span class="text-brand-blue">sin cargar más bidones.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+        Alquila tu dispenser con filtros incluidos en Catamarca. Ideal para tu hogar, oficina o comercio. Instalación y mantenimiento profesional.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-brand-blue hover:bg-brand-dark text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+          Cotizar por WhatsApp
+        </a>
+        <a href="#modelos" class="bg-white hover:bg-gray-50 text-brand-blue font-semibold py-3 px-8 rounded-full transition-colors duration-300 border border-brand-blue/20 shadow-sm">
+          Ver Modelos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: LOS 3 MODELOS -->
+  <section id="modelos" class="py-20 px-4 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Nuestros Modelos</h2>
+      <p class="text-gray-600 text-lg">Elige el dispenser que mejor se adapte a tu espacio.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Modelo 1: Mesada -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+          <!-- Aquí irá la foto real: <img src="/images/dispensers/mesada.webp" alt="Dispenser de Mesada" class="w-full h-full object-cover" /> -->
+          [Foto del Dispenser]
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-brand-dark mb-2">Dispenser de Mesada</h3>
+          <p class="text-gray-600 mb-4 text-sm">Perfecto para cocinas y espacios pequeños. Agua fría y caliente al instante.</p>
+          <ul class="text-sm text-gray-500 mb-6 space-y-2">
+            <li>✓ Instalación bajo mesada</li>
+            <li>✓ Filtro de carbón activado</li>
+            <li>✓ No ocupa espacio</li>
+          </ul>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="block text-center w-full bg-brand-light text-brand-blue font-semibold py-2 rounded-lg hover:bg-brand-accent hover:text-white transition-colors">
+            Consultar
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 2: Piso -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-brand-blue relative hover:-translate-y-2 transition-transform duration-300">
+        <div class="absolute top-0 left-0 w-full bg-brand-blue text-white text-xs font-bold text-center py-1 uppercase tracking-wider">Más Elegido</div>
+        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400 pt-6">
+           <!-- Aquí irá la foto real -->
+          [Foto del Dispenser]
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-brand-dark mb-2">Dispenser de Piso</h3>
+          <p class="text-gray-600 mb-4 text-sm">El clásico de las oficinas. Gran capacidad y presencia imponente.</p>
+          <ul class="text-sm text-gray-500 mb-6 space-y-2">
+            <li>✓ Agua fría y caliente</li>
+            <li>✓ Con conexión directa a red</li>
+            <li>✓ Ideal para alto tráfico</li>
+          </ul>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="block text-center w-full bg-brand-blue text-white font-semibold py-2 rounded-lg hover:bg-brand-dark transition-colors">
+            Consultar
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 3: Heladera -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+           <!-- Aquí irá la foto real -->
+          [Foto del Dispenser]
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-brand-dark mb-2">Dispenser con Heladera</h3>
+          <p class="text-gray-600 mb-4 text-sm">La experiencia premium. Agua purificada y espacio de refrigeración integrado.</p>
+          <ul class="text-sm text-gray-500 mb-6 space-y-2">
+            <li>✓ Heladera incluida</li>
+            <li>✓ Diseño moderno</li>
+            <li>✓ Máxima comodidad</li>
+          </ul>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="block text-center w-full bg-brand-light text-brand-blue font-semibold py-2 rounded-lg hover:bg-brand-accent hover:text-white transition-colors">
+            Consultar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: BENEFICIOS -->
+  <section class="bg-brand-dark py-16 px-4 text-white text-center">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12">¿Por qué elegir PAF-Water-Purifier?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-brand-accent mb-2">Sin bidones</h3>
+          <p class="text-gray-300">Olvídate de cargar bidones pesados. Conexión directa a la red de agua.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-brand-accent mb-2">Filtros Incluidos</h3>
+          <p class="text-gray-300">Nos encargamos del mantenimiento y recambio de filtros por ti.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-brand-accent mb-2">Servicio Local</h3>
+          <p class="text-gray-300">Somos de Catamarca. Atención rápida y personalizada para tu tranquilidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

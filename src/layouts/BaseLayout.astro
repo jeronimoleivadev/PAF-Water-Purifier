@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'PAF-Water-Purifier | Alquiler de Dispensers de Agua en Catamarca',
+  description = 'Alquiler de dispensers de agua con filtros, agua fría y caliente. Modelos de mesada, piso y con heladera. Servicio profesional en Catamarca.',
+} = Astro.props;
+
+const whatsappNumber = "5493834000000"; 
+const whatsappMessage = encodeURIComponent("Hola PAF-Water-Purifier, quiero cotizar el alquiler de un dispenser de agua.");
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    
+    <title>{title}</title>
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="flex flex-col min-h-screen">
+    
+    <Header />
+    
+    <main class="grow">
+      <slot />
+    </main>
+
+    <WhatsAppButton href={whatsappLink} />
+    
+    <!-- Aquí inyectamos el pie de página -->
+    <Footer />
+    
+  </body>
+</html>
