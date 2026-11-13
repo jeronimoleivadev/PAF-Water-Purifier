@@ -14,7 +14,8 @@ const {
   description = 'Alquiler de dispensers de agua con filtros, agua fría y caliente. Modelos de mesada, piso y con heladera. Servicio profesional en Catamarca.',
 } = Astro.props;
 
-const whatsappNumber = "5493834000000"; 
+// Número de WhatsApp CORRECTO
+const whatsappNumber = "5493834925273"; 
 const whatsappMessage = encodeURIComponent("Hola PAF-Water-Purifier, quiero cotizar el alquiler de un dispenser de agua.");
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 ---
@@ -42,9 +43,9 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
       <slot />
     </main>
 
+    <!-- Botón flotante con el número real -->
     <WhatsAppButton href={whatsappLink} />
     
-    <!-- Aquí inyectamos el pie de página -->
     <Footer />
     
   </body>
